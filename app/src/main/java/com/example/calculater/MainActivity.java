@@ -109,8 +109,8 @@ public class MainActivity extends AppCompatActivity {
                             if (currentOp == mins) {
                                 screenContent = calculaterScreen.getText().toString();
                                 secNum = Double.parseDouble(screenContent.
-                                        substring(secNumIndex + 1, screenContent.length()));
-                                //calculaterScreen.setText("fNum"+fNum+ "op"+ currentOp +"secnum"+secNum );
+                                        substring(secNumIndex+1 , screenContent.length()));
+                                //calculaterScreen.setText(""+fNum+ ""+ currentOp +""+secNum );
                                 result = fNum - secNum;
                                 calculaterScreen.setText(String.valueOf(result));
                                 isOpPressed = false;
