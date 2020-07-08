@@ -12,7 +12,7 @@
         android:layout_margin="10dp"
         android:gravity="center|right"
         android:padding="10dp"
-        android:textSize="30sp" />
+        android:textSize="40sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,25 +21,30 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/clear"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_margin="0dp"
-            android:layout_weight="1"
-            android:background="#514F4F"
-            android:text="C"
-            android:textSize="25sp" />
-
-        <Button
             android:id="@+id/delete"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="0dp"
+            android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="#514F4F"
             android:text="x"
-            android:textColor="#E91E63"
-            android:textSize="25sp" />
+            android:textColor="#039BE5"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/clear"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="#514F4F"
+            android:text="C"
+            android:textColor="#E53935"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+
 
     </LinearLayout>
 
@@ -53,7 +58,7 @@
             android:id="@+id/n7"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="0dp"
+            android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="#333335"
             android:text="7"
@@ -63,7 +68,7 @@
             android:id="@+id/n8"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="0dp"
+            android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="#333335"
             android:text="8"
@@ -73,7 +78,7 @@
             android:id="@+id/n9"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="0dp"
+            android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="#333335"
             android:text="9"
@@ -83,11 +88,12 @@
             android:id="@+id/division"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="0dp"
+            android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="#514F4F"
-            android:text="/"
-            android:textSize="25sp" />
+            android:text="÷"
+            android:textSize="30sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
@@ -100,7 +106,7 @@
             android:id="@+id/n4"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="0dp"
+            android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="#333335"
             android:text="4"
@@ -110,7 +116,7 @@
             android:id="@+id/n5"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="0dp"
+            android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="#333335"
             android:text="5"
@@ -120,7 +126,7 @@
             android:id="@+id/n6"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="0dp"
+            android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="#333335"
             android:text="6"
@@ -130,11 +136,12 @@
             android:id="@+id/subtract"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="0dp"
+            android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="#514F4F"
             android:text="-"
-            android:textSize="25sp" />
+            android:textSize="30sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
@@ -147,7 +154,7 @@
             android:id="@+id/n1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="0dp"
+            android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="#333335"
             android:text="1"
@@ -157,7 +164,7 @@
             android:id="@+id/n2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="0dp"
+            android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="#333335"
             android:text="2"
@@ -167,7 +174,7 @@
             android:id="@+id/n3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="0dp"
+            android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="#333335"
             android:text="3"
@@ -177,11 +184,12 @@
             android:id="@+id/addition"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="0dp"
+            android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="#514F4F"
             android:text="+"
-            android:textSize="25sp" />
+            android:textSize="30sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
@@ -194,7 +202,7 @@
             android:id="@+id/point"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="0dp"
+            android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="#333335"
             android:text="."
@@ -204,7 +212,7 @@
             android:id="@+id/n0"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="0dp"
+            android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="#333335"
             android:text="0"
@@ -214,21 +222,23 @@
             android:id="@+id/equal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="0dp"
+            android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="#514F4F"
             android:text="="
-            android:textColor="#77B3E8"
-            android:textSize="25sp" />
+            android:textColor="#43A047"
+            android:textSize="36sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/multiply"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="0dp"
+            android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="#514F4F"
             android:text="*"
-            android:textSize="25sp" />
+            android:textSize="30sp"
+            android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>
