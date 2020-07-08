@@ -12,9 +12,13 @@ public class MainActivity extends AppCompatActivity {
     private double fNum = 0;
     private double secNum = 0;
     private int secNumIndex = 0;
-    private char currentOp;
+    private char currentOp = '0';
     private String screenContent = "";
     private double result = 0;
+    private final  char plus = '+';
+    private final  char mins  = '-';
+    private final  char multi = '*';
+    private final  char divide = '/';
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         final Button n9  = findViewById(R.id.n9);
         final Button point  = findViewById(R.id.point);
         final Button equals  = findViewById(R.id.equal);
-        final Button addition  = findViewById(R.id.add);
+        final Button addition  = findViewById(R.id.addition);
         final Button subtraction = findViewById(R.id.subtract);
         final Button multiplication  = findViewById(R.id.multiply);
         final Button division  = findViewById(R.id.division);
@@ -82,57 +86,85 @@ public class MainActivity extends AppCompatActivity {
                         //Equal Operations
                     case R.id.equal:
 
-                        if(isOpPressed){
-                            switch (currentOp){
-                                case '+':
-                                    screenContent = calculaterScreen.getText().toString();
-                                    String secString = screenContent.
-                                            substring(secNumIndex,screenContent.length());
-                                    secNum  = Double.parseDouble(secString);
-                                     result = fNum + secNum;
-                                    calculaterScreen.setText(String.valueOf(result));
-                                    break;
-                                case '-':
-                                    screenContent = calculaterScreen.getText().toString();
-                                    String secString2 = screenContent.
-                                            substring(secNumIndex,screenContent.length());
-                                    secNum  = Double.parseDouble(secString2);
-                                     result = fNum - secNum;
-                                    calculaterScreen.setText(String.valueOf(result));
-                                    break;
-                            }
-                            // Addition Operation
-//                            if(currentOp == '+'){
-//                                screenContent = calculaterScreen.getText().toString();
-//                                 secNum  = Double.parseDouble(screenContent.
-//                                        substring(secNumIndex,screenContent.length()));
-//                                secNum += fNum;
-//                                calculaterScreen.setText(String.valueOf(secNum));
+                        if(isOpPressed) {
+//                            switch (currentOp){
+//                                case plus:
+//                                    screenContent = calculaterScreen.getText().toString();
+//                                    String secString = screenContent.
+//                                            substring(secNumIndex,screenContent.length());
+//                                    secNum  = Double.parseDouble(secString);
+//                                     result = fNum + secNum;
+//                                    calculaterScreen.setText(String.valueOf(result));
+//                                    break;
+//                                case mins:
+//                                    screenContent = calculaterScreen.getText().toString();
+//                                    String secString2 = screenContent.
+//                                            substring(secNumIndex,screenContent.length());
+//                                    secNum  = Double.parseDouble(secString2);
+//                                     result = fNum - secNum;
+//                                    calculaterScreen.setText(String.valueOf(result));
+//                                    break;
 //                            }
-//                            // Subtrction Operator
-//                            if(currentOp == '-'){
-//                                screenContent = calculaterScreen.getText().toString();
-//                                 secNum  = Double.parseDouble(screenContent.
-//                                        substring(secNumIndex,screenContent.length()));
-//                                 double result = fNum - secNum;
-//                                calculaterScreen.setText(String.valueOf(result));
-//                            }
+                            //Addition Operation
+                            if (currentOp == mins) {
+                                screenContent = calculaterScreen.getText().toString();
+                                secNum = Double.parseDouble(screenContent.
+                                        substring(secNumIndex + 1, screenContent.length()));
+                                //calculaterScreen.setText("fNum"+fNum+ "op"+ currentOp +"secnum"+secNum );
+                                result = fNum - secNum;
+                                calculaterScreen.setText(String.valueOf(result));
+                                isOpPressed = false;
 
+                            } else
+                                // Subtrction Operator
+                                if (currentOp == plus) {
+                                    screenContent = calculaterScreen.getText().toString();
+                                    secNum = Double.parseDouble(screenContent.
+                                            substring(secNumIndex + 1, screenContent.length()));
+                                    result = fNum + secNum;
+                                    calculaterScreen.setText(String.valueOf(result));
+                                    isOpPressed = false;
+                                } else if (currentOp == multi) {
+                                    screenContent = calculaterScreen.getText().toString();
+                                    secNum = Double.parseDouble(screenContent.
+                                            substring(secNumIndex + 1, screenContent.length()));
+                                    result = fNum * secNum;
+                                    calculaterScreen.setText(String.valueOf(result));
+                                    isOpPressed = false;
+
+                                } else if (currentOp == divide) {
+                                    screenContent = calculaterScreen.getText().toString();
+                                    secNum = Double.parseDouble(screenContent.
+                                            substring(secNumIndex + 1, screenContent.length()));
+                                    result = fNum / secNum;
+                                    calculaterScreen.setText(String.valueOf(result));
+                                    isOpPressed = false;
+                                }
                         }
                         break;
                     case R.id.division:
-
+                        screenContent = calculaterScreen.getText().toString();
+                        secNumIndex = screenContent.length();
+                        fNum = Double.parseDouble(screenContent);
+                        calculaterScreen.append("/");
+                        isOpPressed = true;
+                        currentOp = divide;
                         break;
                     case R.id.multiply:
-
+                        screenContent = calculaterScreen.getText().toString();
+                        secNumIndex = screenContent.length();
+                        fNum = Double.parseDouble(screenContent);
+                        calculaterScreen.append("*");
+                        isOpPressed = true;
+                        currentOp = multi;
                         break;
-                    case R.id.add:
+                    case R.id.addition:
                         screenContent = calculaterScreen.getText().toString();
                         secNumIndex = screenContent.length();
                         fNum = Double.parseDouble(screenContent);
                         calculaterScreen.append("+");
                         isOpPressed = true;
-                        currentOp = '+';
+                        currentOp = plus;
                         break;
                     case R.id.subtract:
                         screenContent = calculaterScreen.getText().toString();
@@ -140,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
                         fNum = Double.parseDouble(screenContent);
                         calculaterScreen.append("-");
                         isOpPressed = true;
-                        currentOp = '-';
+                        currentOp = mins;
                         break;
 
                     case R.id.delete:
